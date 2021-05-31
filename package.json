@@ -1,0 +1,24 @@
+{
+  "name": "supply",
+  "version": "1.0.0",
+  "description": "customized theme rooted from supply theme",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/endepointe/supply-theme.git"
+  },
+  "author": "endepointe",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/endepointe/supply-theme/issues"
+  },
+  "homepage": "https://github.com/endepointe/supply-theme#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.2.6",
+    "postcss": "^8.3.0",
+    "tailwindcss": "^2.1.2"
+  }
+}
