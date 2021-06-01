@@ -4,28 +4,48 @@
   <div class="nav-container">
     <nav class="nav">
       <div class="shop-name">
-        <a href="/">Shop Theme 1</a>
+        <a href="/">Coffee Shop</a>
       </div>
+
       <ul class="mobile-hidden">
         <li><a href="/">Home</a></li>
         <li><a href="/products">Products</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
-      <button 
-        id="menu-btn"
-        class="menu-btn">
-        <div></div>
-        <div></div>
-        <div></div>
-      </button>
+
+      <div class="cart-icon-container">
+        <a href="{{ routes.cart_url }}">
+          <span class="cart-item-count">
+            {% comment %} 
+              show cart item count
+            {% endcomment %}  
+            2
+          </span>
+          <img 
+            class="cart-icon"
+            src="{{ 'cart-solid.svg' | asset_url }}"/>
+        </a>
+     
+        <button 
+          id="menu-btn"
+          class="menu-btn">
+          <div></div>
+          <div></div>
+          <div></div>
+        </button>
+      </div>
     </nav>
 
     <ul 
       id="nav-dropdown-menu"
       class="nav-dropdown-menu">
-        <li><a href="/">Home</a></li>
+        <li><a href="{{ routes.root_url }}">Home</a></li>
         <li><a href="/products">Products</a></li>
         <li><a href="/contact">Contact</a></li>
     </ul>
+  </div> <!-- end .nav-container -->
+
+  <div class="header-hero">
+  
   </div>
 </header>

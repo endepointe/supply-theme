@@ -1,11 +1,44 @@
 @media screen and (min-width: 0px) {
+  /* 
+    ICONS 
+  */
+  .cart-icon-container {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .cart-icon-container > a {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.6rem;
+  }
+  .cart-icon-container > a:hover {
+    cursor: pointer;
+  }
+  .cart-item-count {
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .cart-icon {
+  }
+  /* 
+    End ICONS 
+  */
+
   .header {
-    background-color: #3c3c3c; 
-    width: 100%;
+   width: 100%;
   }
   .nav-container {
     display: flex;
     flex-flow: column nowrap;
+    background-color: var(--bg-gray-800); 
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
   }
   .nav { 
     display: flex;
@@ -15,6 +48,7 @@
     padding-left: 0.5rem;
     z-index: 10;
     min-height: 68px;
+    opacity: 1;
   }
   .nav > .shop-name {
     justify-self: flex-start;
@@ -50,6 +84,7 @@
   .menu-btn div {
     height: 3px;
     background-color: white;
+    border-radius: 0.8rem;
   }
   .menu-btn div:nth-child(1) {
     width: 40px;
@@ -69,43 +104,71 @@
   .menu-btn:hover div:nth-child(3) {
     width: 40px;
   }
-  /* 
+  /*///////////////// 
     end .menu-btn 
-  */
+  /////////////////*/
 
-  /* 
+  /*////////////////////
     nav-dropdown-menu  
-  */
+  ////////////////////*/
   .nav-dropdown-menu {
+    background-color: var(--bg-gray-800);
     position: absolute;
-    margin-top: -150px;
+    top: 20px;
+    left: 0;
+    right: 0;
     visibility: hidden;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
     z-index: 9;
-    transition: margin-top 0.5s ease-in-out;
+    -webkit-transition: top 0.25s ease;
+    -moz-transition: top 0.25s ease;
+    -ms-transition: top 0.25s ease;
+    -o-transition: top 0.25s ease;
+    transition: top 0.25s ease;
   }
   .nav-dropdown-menu li {
+    width: 100%;
     flex: 0 0 48px;
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-around;
+    justify-content: center; 
     align-items: center;
+  }
+  .nav-dropdown-menu li:hover {
+    background-color: var(--bg-gray-300);
+    cursor: pointer;
   }
   .nav-dropdown-menu a,
   .nav-dropdown-menu a:visited {
+    /* flex: 1;  */
+    /* display: flex; */
+    width: 100%;
     color: white;
     font-size: 18px;
+    text-align: center;
   }
   /* make this overlay the content beneath it */
   .show-dropdown-menu {
-    margin-top: 0;
-    position: relative;
+    top: 68px;
     visibility: visible;
   }
-  /* 
+  /*///////////////////// 
     end nav-dropdown-menu  
-  */
+  /////////////////////*/
 
+  /*/////////// 
+    HEADER HERO 
+  ///////////*/
+  .header-hero {
+    width: 100%;
+    background-image: url('../assets/black-coffee-and-spilled-instant-granules.jpg');
+    background-position:center;
+    background-repeat: no-repeat;
+    height: 400px;
+  }
+  /* 
+    End HEADER HERO 
+  */
 } 

@@ -10,6 +10,8 @@ li {list-style-type: none;}
 /* colors */
 :root {
   --eggshell: rgb(252,252,252);
+  --bg-gray-800: rgba(60,60,60,1);
+  --bg-gray-300: rgba(110,110,110,1);
 }
 
 @media screen and (min-width: 0px) {
