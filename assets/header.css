@@ -1,32 +1,44 @@
 @media screen and (min-width: 0px) {
   .header {
     background-color: #3c3c3c; 
+    width: 100%;
+  }
+  .nav-container {
     display: flex;
-    flex-direction: row;
+    flex-flow: column nowrap;
   }
   .nav { 
-    flex: 1;
     display: flex;
     flex-flow: row nowrap;
-    /* align-items: center; */
-    justify-content: flex-end;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 0.5rem;
+    z-index: 10;
+    min-height: 68px;
+  }
+  .nav > .shop-name {
+    justify-self: flex-start;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
   }
   .nav > ul {
+    flex: 1;
     display: flex;
     flex-direction: row;
   }
-  ul.hidden {
+  ul.mobile-hidden {
     display: none;
   }
   .nav a {
     color: var(--eggshell);
+    font-size: 24px;
   }
 
   /* 
     .menu-btn 
   */
   .menu-btn {
-    align-self: flex-end;
     background: none;
     border: none;
     padding: 0.6rem;
@@ -36,19 +48,64 @@
     cursor: pointer;
   }
   .menu-btn div {
-    width: 40px;
     height: 3px;
     background-color: white;
   }
   .menu-btn div:nth-child(1) {
+    width: 40px;
   }
   .menu-btn div:nth-child(2) {
     margin: 0.6rem 0;
+    width: 34px;
+    transition: width 0.2s ease-in-out;
   }
   .menu-btn div:nth-child(3) {
+    width: 28px;
+    transition: width 0.3s ease-in-out;
+  }
+  .menu-btn:hover div:nth-child(2) {
+    width: 40px
+  }
+  .menu-btn:hover div:nth-child(3) {
+    width: 40px;
   }
   /* 
     end .menu-btn 
+  */
+
+  /* 
+    nav-dropdown-menu  
+  */
+  .nav-dropdown-menu {
+    position: absolute;
+    margin-top: -150px;
+    visibility: hidden;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    z-index: 9;
+    transition: margin-top 0.5s ease-in-out;
+  }
+  .nav-dropdown-menu li {
+    flex: 0 0 48px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .nav-dropdown-menu a,
+  .nav-dropdown-menu a:visited {
+    color: white;
+    font-size: 18px;
+  }
+  /* make this overlay the content beneath it */
+  .show-dropdown-menu {
+    margin-top: 0;
+    position: relative;
+    visibility: visible;
+  }
+  /* 
+    end nav-dropdown-menu  
   */
 
 } 

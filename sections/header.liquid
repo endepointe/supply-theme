@@ -1,16 +1,31 @@
 <header class="header" 
   data-section-id="{{section.id}}"
   data-section-type="header-section">
-  <nav class="nav">
-    <ul class="hidden">
-      <li><a href="/">Home</a></li>
-      <li><a href="/products">Products</a></li>
+  <div class="nav-container">
+    <nav class="nav">
+      <div class="shop-name">
+        <a href="/">Shop Theme 1</a>
+      </div>
+      <ul class="mobile-hidden">
+        <li><a href="/">Home</a></li>
+        <li><a href="/products">Products</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+      <button 
+        id="menu-btn"
+        class="menu-btn">
+        <div></div>
+        <div></div>
+        <div></div>
+      </button>
+    </nav>
+
+    <ul 
+      id="nav-dropdown-menu"
+      class="nav-dropdown-menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="/products">Products</a></li>
+        <li><a href="/contact">Contact</a></li>
     </ul>
-    <button id="menu-btn"
-      class="menu-btn">
-      <div></div>
-      <div></div>
-      <div></div>
-    </button>
-  </nav>
+  </div>
 </header>
