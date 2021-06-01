@@ -84,7 +84,6 @@
   .menu-btn div {
     height: 3px;
     background-color: white;
-    border-radius: 0.8rem;
   }
   .menu-btn div:nth-child(1) {
     width: 40px;
@@ -96,7 +95,7 @@
   }
   .menu-btn div:nth-child(3) {
     width: 28px;
-    transition: width 0.3s ease-in-out;
+    transition: width 0.25s ease-in-out;
   }
   .menu-btn:hover div:nth-child(2) {
     width: 40px
