@@ -45,10 +45,7 @@
     "sections": {
       "header": {
         "type": "header",
-        "settings": {
-          "logo": "",
-          "logo_max_width": "305"
-        }
+        "settings": {}
       },
       "footer": {
         "type": "footer",
@@ -73,6 +70,7 @@
             "type": "newsletter",
             "settings": {
               "title": "Newsletter",
+              "subtext": "<p>Promotions, new products and sales. Directly to your inbox.<\/p>",
               "width": "33%"
             }
           }
@@ -84,6 +82,7 @@
         ],
         "settings": {
           "social_enabled": false,
+          "show_payment_icons": true,
           "legal_menu": ""
         }
       },
@@ -92,24 +91,15 @@
         "blocks": {
           "slide-0": {
             "type": "image",
-            "settings": {
-              "slide": "",
-              "link": ""
-            }
+            "settings": {}
           },
           "slide-1": {
             "type": "image",
-            "settings": {
-              "slide": "",
-              "link": ""
-            }
+            "settings": {}
           },
           "slide-2": {
             "type": "image",
-            "settings": {
-              "slide": "",
-              "link": ""
-            }
+            "settings": {}
           }
         },
         "block_order": [
@@ -118,7 +108,7 @@
           "slide-2"
         ],
         "settings": {
-          "slider_home_auto": false,
+          "slider_home_auto": true,
           "slider_home_rate": "5000"
         }
       },
@@ -147,30 +137,79 @@
       "collection-row-1": {
         "type": "collection-rows",
         "settings": {
+          "title": "Featured collection",
           "home_featured_row": "",
           "grid": 4,
-          "rows": 1
+          "rows": 1,
+          "product_show_saved_amount": true,
+          "product_show_compare_at_price": false
         }
       },
       "collection-row-2": {
         "type": "collection-rows",
         "settings": {
+          "title": "Featured collection",
           "home_featured_row": "",
           "grid": 4,
-          "rows": 1
+          "rows": 1,
+          "product_show_saved_amount": true,
+          "product_show_compare_at_price": false
         }
       },
       "collection-row-3": {
         "type": "collection-rows",
         "settings": {
+          "title": "Featured collection",
           "home_featured_row": "",
           "grid": 4,
-          "rows": 1
+          "rows": 1,
+          "product_show_saved_amount": true,
+          "product_show_compare_at_price": false
+        }
+      },
+      "1622700300d9229355": {
+        "type": "slideshow",
+        "blocks": {
+          "16227003004cc1493d-0": {
+            "type": "image",
+            "settings": {
+              "slide": "shopify:\/\/shop_images\/coffee-on-rustic-cottage-table.jpg"
+            }
+          },
+          "d630af38-71d2-49b4-bd94-ee81d977b27e": {
+            "type": "image",
+            "settings": {
+              "slide": "shopify:\/\/shop_images\/wood-handled-espresso-machine.jpg"
+            }
+          },
+          "b4e9d092-bc3f-4566-b110-3a7b8c3ddb8a": {
+            "type": "image",
+            "settings": {
+              "slide": "shopify:\/\/shop_images\/tablet-coffee.jpg"
+            }
+          },
+          "93760799-88b4-4f67-a633-f14fc105bb4b": {
+            "type": "image",
+            "settings": {
+              "slide": "shopify:\/\/shop_images\/morning-love-greeting.jpg"
+            }
+          }
+        },
+        "block_order": [
+          "16227003004cc1493d-0",
+          "d630af38-71d2-49b4-bd94-ee81d977b27e",
+          "b4e9d092-bc3f-4566-b110-3a7b8c3ddb8a",
+          "93760799-88b4-4f67-a633-f14fc105bb4b"
+        ],
+        "settings": {
+          "slider_home_auto": false,
+          "slider_home_rate": "5000"
         }
       }
     },
     "content_for_index": [
       "slideshow",
+      "1622700300d9229355",
       "collection-list",
       "collection-row-1",
       "collection-row-2",
