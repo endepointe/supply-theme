@@ -1,10 +1,6 @@
-<style>
-  .slides li {
-  }
-</style>
-
 <hr>
-<div class="" id="heroSlider--{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="slideshow-section" data-slider-home-auto="{{ section.settings.slider_home_auto }}" data-slider-home-rate="{{ section.settings.slider_home_rate }}">
+<div class="flexslider" id="heroSlider--{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="slideshow-section" data-slider-home-auto="{{ section.settings.slider_home_auto }}" data-slider-home-rate="{{ section.settings.slider_home_rate }}">
+
   <ul class="slides">
     {% for block in section.blocks %}
       <li id="slide--{{ block.id }}" data-flexslider-index="{{ forloop.index0 }}" {{ block.shopify_attributes }}>
