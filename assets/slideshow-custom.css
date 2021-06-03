@@ -1,0 +1,10 @@
+@media screen and (min-width: 0) {
+  .slides-custom {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .slideshow-img-custom {
+  }
+}

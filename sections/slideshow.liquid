@@ -1,7 +1,7 @@
 <hr>
 <div class="flexslider" id="heroSlider--{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="slideshow-section" data-slider-home-auto="{{ section.settings.slider_home_auto }}" data-slider-home-rate="{{ section.settings.slider_home_rate }}">
 
-  <script>console.log({{ section.blocks | json }});</script>
+  {% comment %} <script>console.log({{ section.blocks | json }});</script> {% endcomment %}
 
   <ul class="slides">
     {% for block in section.blocks %}

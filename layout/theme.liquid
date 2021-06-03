@@ -14,7 +14,10 @@
   {% comment %} 
     https://fonts.google.com/icons/
   {% endcomment %}
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Slick Slider -->
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 
   <!-- Todo item: Add credits to the images used -->
   {% comment %} 
@@ -44,6 +47,7 @@
   {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
   {{ 'base.css' | asset_url | stylesheet_tag }}
   {{ 'header.css' | asset_url | stylesheet_tag }}
+  {{ 'slideshow-custom.css' | asset_url | stylesheet_tag }}
 
   <script>
 
@@ -142,6 +146,8 @@
   </ul>
 
   <!-- insert all custom js below -->
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script src="{{ 'slideshow-custom.js' | asset_url }}" async="async"></script>
   <script src="{{ 'header.js' | asset_url }}" async="async"></script>
   <script src="{{}}"></script>
 </body>

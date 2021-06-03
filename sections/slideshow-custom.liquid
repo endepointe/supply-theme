@@ -1,48 +1,38 @@
 <hr>
-<div class="flexslider" id="heroSlider--{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="slideshow-section" data-slider-home-auto="{{ section.settings.slider_home_auto }}" data-slider-home-rate="{{ section.settings.slider_home_rate }}">
-
-  <ul class="slides">
+{% comment %} <div class="flexslider" id="heroSlider--{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="slideshow-section" data-slider-home-auto="{{ section.settings.slider_home_auto }}" data-slider-home-rate="{{ section.settings.slider_home_rate }}"> {% endcomment %}
+<div>
+  <script>console.log('custom slider');</script>
+  <ul class="slides-custom">
     {% for block in section.blocks %}
-      {% comment %} <script>console.log({{ block.settings | json }});</script> {% endcomment %}
       <li id="slide--{{ block.id }}" data-flexslider-index="{{ forloop.index0 }}" {{ block.shopify_attributes }}>
+        {% comment %} <script>console.log({{ block.id | json }});</script> {% endcomment %}
         {% if block.settings.slide != blank %}
           {% if block.settings.link %}
             <a href="{{ block.settings.link }}" class="slide-link">
           {% endif %}
             {%- assign image = block.settings.slide -%}
-            {%- capture img_wrapper_id -%}slideShowImageWrapper-{{ section.id }}-{{ image.id }}{%- endcapture -%}
-            {%- assign max_width = 1000 -%}
-            {%- assign max_height = 1500 -%}
+            {% comment %} <script>console.log({{ block.settings.slide | json }});</script> {% endcomment %}
 
-            {%- include 'image-logic' with width: max_width, height: max_height -%}
-         
-            {%- assign img_url = image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
-            <div id="{{ img_wrapper_id }}" class="lazyload__image-wrapper" data-image-id="{{ image.id }}" style="max-width: {{ max_width }}px">
-              <div class="lazyload__image-wrapper no-js" style="padding-top:{{ 1 | divided_by: image.aspect_ratio | times: 100}}%;">
-                <img
-                  class="lazyload js {% if forloop.index > 1%}lazypreload{% endif %}"
-                  src="{{ image | img_url: '300x' }}"
-                  data-src="{{ img_url }}"
-                  data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
-                  data-aspectratio="{{ image.aspect_ratio }}"
-                  data-sizes="auto"
-                  alt="{{ image.alt | escape }}">
-              </div>
-            </div>
+            <img 
+              class="slideshow-img-custom"
+              src="{{ image | img_url: 'jpg' }}" alt="">
+              <script>console.log({{ image | json }});</script>
 
-            <noscript>
-              <img src="{{ image | img_url: '580x' }}"
-                srcset="{{ image | img_url: '580x' }} 1x, {{ image | img_url: '580x', scale: 2 }} 2x"
-                alt="{{ image.alt }}" style="opacity:1;">
-            </noscript>
-            {% comment %}<img src="{{ image | img_url: '1024x' }}"
-            srcset="{{ image | img_url: '1024x' }} 1x, {{ image | img_url: '1024x', scale: 2 }} 2x" alt="{{ image.alt }}">{% endcomment %}
+            {% comment %} Use responsive images {% endcomment %}
+            {% comment %} 
+             https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images
+            {% endcomment %}
+            <noscript></noscript>
 
           {% if block.settings.link %}
             </a>
           {% endif %}
-
+        {% comment %} 
+          if there are somehow no images 
+          in the created section  
+        {% endcomment %}
         {% else %}
+          <script>console.log('you should include some images');</script>
           {% capture current %}{% cycle 1, 2 %}{% endcapture %}
           {% capture svg_tag_class %}placeholder-noblocks slide-link slide-link--{{ block.id }}{% endcapture %}
           {%- assign placeholder = 'placeholder-lifestyle-' | append: current -%}
@@ -60,7 +50,7 @@
     "cs": "Prezentace",
     "da": "Diasshow",
     "de": "Slideshow",
-    "en": "Slideshow",
+    "en": "Slideshow Custom",
     "es": "Diapositivas",
     "fi": "Diaesitys",
     "fr": "Diaporama",
@@ -255,7 +245,7 @@
       "name": {
         "cs": "Prezentace",
         "da": "Diasshow",
-        "de": "Slideshow",
+        "de": "Slideshow Custom",
         "en": "Slideshow Custom",
         "es": "Diapositivas",
         "fi": "Diaesitys",
