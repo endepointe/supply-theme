@@ -8,6 +8,6 @@ const navDropdownMenu = document.getElementById('nav-dropdown-menu')
 // })
 
 $('#menu-btn').click(function () {
-  console.log(navDropdownMenu.style, navDropdownMenu.offsetHeight)
+  // console.log(navDropdownMenu.style, navDropdownMenu.offsetHeight)
   navDropdownMenu.classList.toggle('show-dropdown-menu');
 })
