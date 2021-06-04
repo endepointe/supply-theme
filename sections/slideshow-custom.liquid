@@ -1,29 +1,33 @@
 <hr>
 {% comment %} <div class="flexslider" id="heroSlider--{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="slideshow-section" data-slider-home-auto="{{ section.settings.slider_home_auto }}" data-slider-home-rate="{{ section.settings.slider_home_rate }}"> {% endcomment %}
 <div>
-  <script>console.log('custom slider');</script>
+  <script>console.log('loaded: slideshow-custom.liquid');</script>
+  <h2 class="h1">Explore Shop</h2>
   <ul class="slides-custom">
     {% for block in section.blocks %}
-      <li id="slide--{{ block.id }}" data-flexslider-index="{{ forloop.index0 }}" {{ block.shopify_attributes }}>
-        {% comment %} <script>console.log({{ block.id | json }});</script> {% endcomment %}
+      <li {{ block.shopify_attributes }}>
         {% if block.settings.slide != blank %}
           {% if block.settings.link %}
             <a href="{{ block.settings.link }}" class="slide-link">
           {% endif %}
-            {%- assign image = block.settings.slide -%}
-            {% comment %} <script>console.log({{ block.settings.slide | json }});</script> {% endcomment %}
+          {%- assign image = block.settings.slide -%}
 
-            <img 
-              class="slideshow-img-custom"
-              src="{{ image | img_url: 'jpg' }}" alt="">
-              <script>console.log({{ image | json }});</script>
-
-            {% comment %} Use responsive images {% endcomment %}
-            {% comment %} 
-             https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images
-            {% endcomment %}
-            <noscript></noscript>
-
+          <div id="{{ img_wrapper_id }}" class="lazyload__image-wrapper" data-image-id="{{ image.id }}" style="max-width: {{ max_width }}px">
+            <div class="lazyload__image-wrapper no-js" style="padding-top:{{ 1 | divided_by: image.aspect_ratio | times: 100}}%;">
+              <img 
+                class="lazyload js {% if forloop.index > 1%}lazypreload{% endif %} slideshow-img-custom"
+                src="{{ image | img_url: '300x', format: 'jpg' }}"          data-src="{{ img_url }}"
+                data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
+                data-aspectratio="{{ image.aspect_ratio }}"
+                data-sizes="auto"
+                  alt="{{ image.alt | escape }}">
+              {% comment %} Use responsive images {% endcomment %}
+              {% comment %} 
+              https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images
+              {% endcomment %}
+              <noscript></noscript>
+            </div>
+          </div>
           {% if block.settings.link %}
             </a>
           {% endif %}
