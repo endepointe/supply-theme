@@ -1,31 +1,18 @@
 {% capture theme_settings_link %}<a href="/admin/themes/{{ theme.id }}/settings">{{ 'layout.footer.theme_settings' | t }}</a>{% endcapture %}
 
+    <style>
+
+    </style>
+
+
 <footer class="site-footer small--text-center" role="contentinfo">
   <div class="wrapper">
 
-    <div class="grid">
+    <div class="">
 
     {% for block in section.blocks %}
 
-      {% case block.settings.width %}
-        {% when '16%' %}
-          {%- assign block_width = 'small--one-whole two-twelfths' -%}
-        {% when '25%' %}
-          {%- assign block_width = 'small--one-whole one-quarter' -%}
-        {% when '33%' %}
-          {%- assign block_width = 'small--one-whole one-third' -%}
-        {% when '50%' %}
-          {%- assign block_width = 'small--one-whole one-half' -%}
-        {% when '66%' %}
-          {%- assign block_width = 'small--one-whole two-thirds' -%}
-        {% when '75%' %}
-          {%- assign block_width = 'small--one-whole three-quarters' -%}
-        {% when '100%' %}
-          {%- assign block_width = 'one-whole' -%}
-      {% endcase %}
-
-
-    <div class="grid-item {{ block_width }}">
+    <div class="footer-item">
       {% if block.settings.title %}
         <h3>{{ block.settings.title | escape }}</h3>
       {% endif %}
@@ -33,7 +20,7 @@
       {% case block.type %}
 
         {% when 'menu' %}
-        <ul>
+        <ul class="footer-item-links">
           {% for link in linklists[block.settings.menu].links %}
             <li><a href="{{ link.url }}">{{ link.title }}</a></li>
           {% else %}
@@ -171,11 +158,12 @@
       <div class="grid-item{% unless shop.enabled_payment_types == empty %} large--two-fifths{% endunless %}">
           <ul class="legal-links inline-list">
               <li>
-                &copy; {{ 'now' | date: '%Y' }} {{ shop.name | link_to: routes.root_url }}
+                {% assign name = 'EP Coffee' %}
+                &copy; {{ 'now' | date: '%Y' }} {{ name | link_to: routes.root_url }}
               </li>
-              <li>
+              {% comment %} <li>
                 {{ powered_by_link }}
-              </li>
+              </li> {% endcomment %}
           </ul>
       </div>
 

@@ -1,0 +1,26 @@
+@media screen and (min-width: 0) {
+  .footer-item,
+  .footer-item-links {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    align-items: center;
+  } 
+  .footer-item-links > li {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer-newsletter-form,
+  .footer-input-group {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+  input[type=email].footer-input-group-field {
+    flex: 1 0 300px;
+    margin-bottom: 0;
+  }
+}
