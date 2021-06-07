@@ -167,12 +167,54 @@
   ///////////*/
   .header-hero {
     width: 100%;
-    background-image: url('../assets/black-coffee-and-spilled-instant-granules.jpg');
-    background-position:center;
+    background-image: url('../assets/header-bg-400.png');
+    background-position: center;
     background-repeat: no-repeat;
-    height: 400px;
+    background-size: 100vw;
+    height: 300px;
+    margin-top: 68px; /* match the min height of navbar */
   }
   /* 
     End HEADER HERO 
   */
 } 
+
+@media screen and (min-width: 600px) {
+  /*/////////// 
+    HEADER HERO 
+  ///////////*/
+  .header-hero {
+    background-image: url('../assets/header-bg-600.png'); 
+    height: 400px;
+    margin-top: 10px;
+  }
+  /* 
+    End HEADER HERO 
+  */
+}
+
+@media screen and (min-width: 800px) {
+  /*/////////// 
+    HEADER HERO 
+  ///////////*/
+  .header-hero {
+    background-image: url('../assets/header-bg-800.png'); 
+    height: 500px;
+    margin-top: 0;
+  }
+  /* 
+    End HEADER HERO 
+  */
+}
+@media screen and (min-width: 1000px) {
+  /*/////////// 
+    HEADER HERO 
+  ///////////*/
+  .header-hero {
+    background-image: url('../assets/header-bg-1000.png'); 
+    height: 600px;
+  }
+  /* 
+    End HEADER HERO 
+  */
+}
