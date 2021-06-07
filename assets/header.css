@@ -218,3 +218,16 @@
     End HEADER HERO 
   */
 }
+
+@media screen and (min-width: 1400px) {
+  /*/////////// 
+    HEADER HERO 
+  ///////////*/
+  .header-hero {
+    background-image: url('../assets/header-bg-1200.png'); 
+    background-size: 90vw;
+  }
+  /* 
+    End HEADER HERO 
+  */
+}
