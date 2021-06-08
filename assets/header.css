@@ -169,11 +169,11 @@
     /* img background-color: rgb(239,239,239); */
     width: 100%;
     /* background-image: url('../assets/header-bg-light-400x220.png'); */
-    background: linear-gradient(215deg, transparent, rgb(239,239,239) 90%,rgb(255,255,255)), url('../assets/header-bg-light-400x220.png');
+    background: linear-gradient(190deg, rgba(239,239,239,0) 30%,rgba(250,250,250) 80%), url('../assets/header-bg-light-400x236.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100vw;
-    height: 220px;
+    height: 236px;
     margin-top: 68px; /* match the min height of navbar */
   }
   /* 
@@ -186,10 +186,11 @@
     HEADER HERO 
   ///////////*/
   .header-hero {
-
-    background: linear-gradient(215deg, transparent, rgb(239,239,239) 90%,rgb(255,255,255)), url('../assets/header-bg-light-600x330.png');
-    height: 330px;
-    margin-top: 10px;
+    background: linear-gradient(190deg, rgba(239,239,239,0) 30%,rgba(250,250,250) 80%), url('../assets/header-bg-light-600x354.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100vw;
+    height: 354px;
   }
   /* 
     End HEADER HERO 
@@ -201,8 +202,11 @@
     HEADER HERO 
   ///////////*/
   .header-hero {
-    height: 500px;
-    margin-top: 0;
+    background: linear-gradient(190deg, rgba(239,239,239,0) 30%,rgba(250,250,250) 80%), url('../assets/header-bg-light-800x472.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100vw;
+    height: 472px;
   }
   /* 
     End HEADER HERO 
@@ -213,19 +217,27 @@
     HEADER HERO 
   ///////////*/
   .header-hero {
-    height: 600px;
+    background: linear-gradient(190deg, rgba(239,239,239,0) 30%,rgba(250,250,250) 80%), url('../assets/header-bg-light-1000x590.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    /* background-size: 100vw; */
+    height: 590px;
   }
   /* 
     End HEADER HERO 
   */
 }
 
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1200px) {
   /*/////////// 
     HEADER HERO 
   ///////////*/
   .header-hero {
-    background-size: 90vw;
+    background: linear-gradient(190deg, rgba(239,239,239,0) 30%,rgba(250,250,250) 80%), url('../assets/header-bg-light-1200x708.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    /* background-size: 100vw; */
+    height: 708px;
   }
   /* 
     End HEADER HERO 
