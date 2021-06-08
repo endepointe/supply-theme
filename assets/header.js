@@ -13,7 +13,7 @@ $('#menu-btn').click(function () {
 
 /* nav opacity change after scroll*/
 // Replace the nav opacity if the user has not scrolled the page below
-// the nav y-coordinate. Otherwise, 
+// the nav y-coordinate. Otherwise, keep it opaque.
 function changeNavBGColor(navY, headerY) {
   // remove the nav opacity if true
   if (navY >= headerY) {
