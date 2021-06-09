@@ -1,12 +1,16 @@
 /* variable declarations */
 //const menuBtn = document.getElementById('menu-btn');
 const navDropdownMenu = document.getElementById('nav-dropdown-menu')
+const body = document.body;
 const nav = document.getElementById('nav');
 const navEnd = document.getElementById('nav-end');
 const headerEnd = document.getElementById('header-end');
 
 // sometimes easier with jquery, same result
 $('#menu-btn').click(function () {
+  // disable the browser scrollbar as well
+  body.classList.toggle('overflow-hidden');
+  console.log(navDropdownMenu.classList);
   navDropdownMenu.classList.toggle('show-dropdown-menu');
 });
 /* end #menu-btn event(s) */

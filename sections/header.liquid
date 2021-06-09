@@ -6,9 +6,11 @@
       </div>
 
       <ul class="mobile-hidden">
-        <li><a href="/">Home</a></li>
+        <li><a href="{{ routes.root_url }}">Home</a></li>
         <li><a href="/products">Products</a></li>
         <li><a href="/contact">Contact</a></li>
+        <li><a href="/about">About</a></li>
+        <li class="dropdown-search">{% include 'search-bar' %}</li>
       </ul>
 
       <div class="cart-icon-container">
@@ -41,6 +43,8 @@
         <li><a href="{{ routes.root_url }}">Home</a></li>
         <li><a href="/products">Products</a></li>
         <li><a href="/contact">Contact</a></li>
+        <li><a href="/about">About</a></li>
+        <li class="dropdown-search">{% include 'search-bar' %}</li>
     </ul>
   </div> <!-- end .nav-container -->
 
