@@ -1,6 +1,6 @@
 /* variable declarations */
-//const menuBtn = document.getElementById('menu-btn');
-const navDropdownMenu = document.getElementById('nav-dropdown-menu')
+const menuBtn = document.getElementById('menu-btn');
+const dropdownMenu = document.getElementById('dropdown-menu')
 const body = document.body;
 const nav = document.getElementById('nav');
 const navEnd = document.getElementById('nav-end');
@@ -10,8 +10,10 @@ let menuOpen = false;
 
 // sometimes easier with jquery, same result
 $('#menu-btn').click(function () {
+  menuBtn.classList.toggle('menu-btn');
+  menuBtn.classList.toggle('menu-btn-clicked');
   body.classList.toggle('overflow-hidden'); 
-  navDropdownMenu.classList.toggle('show');
+  dropdownMenu.classList.toggle('show-dropdown-menu');
 });
 /* end #menu-btn event(s) */
 

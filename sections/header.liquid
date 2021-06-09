@@ -14,7 +14,8 @@
       </ul>
 
       <div class="cart-icon-container">
-        <a href="{{ routes.cart_url }}">
+        <a class="cart-icon-link" 
+          href="{{ routes.cart_url }}">
           <span class="cart-item-count">
             {% comment %} 
               show cart item count
@@ -38,8 +39,8 @@
     </nav>
 
     <ul 
-      id="nav-dropdown-menu"
-      class="show-dropdown-menu">
+      id="dropdown-menu"
+      class="">
         <li><a href="{{ routes.root_url }}">Home</a></li>
         <li><a href="/products">Products</a></li>
         <li><a href="/contact">Contact</a></li>

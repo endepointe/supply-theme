@@ -27,9 +27,9 @@
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
   }
-  .cart-icon-container > a {
+  .cart-icon-link {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
@@ -106,11 +106,15 @@
     .menu-btn 
   */
   .menu-btn {
+    margin-right: 0.6rem;
+  }
+  .menu-btn,
+  .menu-btn:active,
+  .menu-btn:hover {
     background: none;
     border: none;
-    padding: 0.6rem;
+    outline: none;
   }
-  /* add a rotation on hover and click events */
   .menu-btn:hover {
     cursor: pointer;
   }
@@ -129,6 +133,7 @@
   .menu-btn div:nth-child(3) {
     width: 28px;
     transition: width 0.25s ease-in-out;
+    background: red;
   }
   .menu-btn:hover div:nth-child(2) {
     width: 40px
@@ -136,6 +141,61 @@
   .menu-btn:hover div:nth-child(3) {
     width: 40px;
   }
+  /* 
+    rotation on click event 
+  */
+  .menu-btn-clicked {
+    transform: rotate(135deg);
+    transition: transform 0.3s linear;
+    margin-right: 0.6rem;
+    display: flex;
+    width: 40px;
+    /* if supported */
+    /* display: grid; */
+  }
+  .menu-btn-clicked,
+  .menu-btn-clicked:active,
+  .menu-btn-clicked:hover {
+    background: none;
+    border: none;
+    padding: 0;
+    outline: none;
+  }
+  .menu-btn-clicked:hover {
+    cursor: pointer;
+  }
+  .menu-btn-clicked div {
+    height: 3px;
+    /* width: 40px; */
+    background-color: var(--bg-gray);
+  }
+  .menu-btn-clicked div:nth-child(1) {
+    transform: rotate(180deg);
+    transition: transform 0.2s linear;
+    width: 100%;
+    /* with grid if supported */
+    /* grid-column: 1; 
+    grid-row: 1; */
+  }
+  .menu-btn-clicked div:nth-child(2) {
+    display: none;
+  }
+  .menu-btn-clicked div:nth-child(3) {
+    transform: rotate(-270deg);
+    transition: transform 0.2s linear;
+    width: 100%;
+    margin-left: -100%;
+    /* with grid if supported */
+    /* grid-column: 1; 
+    grid-row: 1; */
+  }
+  .menu-btn-clicked:hover div:nth-child(2) {
+  }
+  .menu-btn-clicked:hover div:nth-child(3) {
+  }
+  /* 
+    end rotation on click event 
+  */
   /*///////////////// 
     end .menu-btn 
   /////////////////*/
@@ -143,32 +203,25 @@
   /*////////////////////
     nav-dropdown-menu  
   ////////////////////*/
-  .show-dropdown-menu {
+  #dropdown-menu {
     position: absolute;
-    display: none;
     z-index: 9;
-    background-color: var(--bg-store-light);
-    z-index: 9;
-    width: 100vw;
-    height: 100vh;
-    padding-top: 68px; /* the height of the navbar */
-  }
-  .show {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
+    background-color: var(--bg-store-light);
+    width: 100vw;
+    height: 100vh;
+    padding-top: 68px; /* the height of the navbar */
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  }
+  #dropdown-menu.show-dropdown-menu {
+    opacity: 1;
     visibility: visible;
-    animation-duration: 0.5s;
-    animation-name: openMenu;
   }
-  @keyframes openMenu {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
+  #dropdown-menu li,
   .show-dropdown-menu li {
     flex: 0 0 58px;
     width: 100vw;
@@ -189,6 +242,7 @@
     text-align: center;
     border-bottom: 0;
   }
+  #dropdown-menu a,
   .show-dropdown-menu a {
     width: fit-content;
     color: #000000;
@@ -196,10 +250,11 @@
     text-align: center;
     border-bottom: 0;
   }
-  .show-dropdown-menu a:hover {
+  #dropdown-menu.show-dropdown-menu a:hover {
     cursor: pointer;
     border-bottom: 1px solid var(--bg-gray);
   }
+  #dropdown-menu .dropdown-search:hover,
   .show-dropdown-menu .dropdown-search:hover {
     border-bottom: none;
   }
