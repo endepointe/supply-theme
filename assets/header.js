@@ -5,13 +5,13 @@ const body = document.body;
 const nav = document.getElementById('nav');
 const navEnd = document.getElementById('nav-end');
 const headerEnd = document.getElementById('header-end');
+// if the menu is open, menuOpen will be true, else it will be false;
+let menuOpen = false;
 
 // sometimes easier with jquery, same result
 $('#menu-btn').click(function () {
-  // disable the browser scrollbar as well
-  body.classList.toggle('overflow-hidden');
-  console.log(navDropdownMenu.classList);
-  navDropdownMenu.classList.toggle('show-dropdown-menu');
+  body.classList.toggle('overflow-hidden'); 
+  navDropdownMenu.classList.toggle('show');
 });
 /* end #menu-btn event(s) */
 

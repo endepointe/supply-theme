@@ -143,52 +143,72 @@
   /*////////////////////
     nav-dropdown-menu  
   ////////////////////*/
-  .nav-dropdown-menu {
+  .show-dropdown-menu {
     position: absolute;
     display: none;
     z-index: 9;
-    padding-top: 68px; /* the height of the navbar */
-    /* -webkit-transition: top 0.25s ease;
-    -moz-transition: top 0.25s ease;
-    -ms-transition: top 0.25s ease;
-    -o-transition: top 0.25s ease;
-    transition: top 0.25s ease; */
-  }
-  .show-dropdown-menu {
     background-color: var(--bg-store-light);
+    z-index: 9;
+    width: 100vw;
+    height: 100vh;
+    padding-top: 68px; /* the height of the navbar */
+  }
+  .show {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    z-index: 9;
     visibility: visible;
-    width: 100vw;
-    height: 100vh;
+    animation-duration: 0.5s;
+    animation-name: openMenu;
   }
-  .show-dropdown-menu a,
-  .show-dropdown-menu a:visited {
-    width: 100%;
-    color: #000000;
-    font-size: 18px;
-    text-align: center;
+  @keyframes openMenu {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
   .show-dropdown-menu li {
     flex: 0 0 58px;
-    width: fit-content;
+    width: 100vw;
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
     align-items: flex-end;
-    border-bottom: 0;
+    border-bottom: none;
+    margin: 2rem auto;
   }
   .show-dropdown-menu li:hover {
+    /* cursor: pointer; */
+  }
+  .show-dropdown-menu a:visited {
+    width: fit-content;
+    color: #000000;
+    font-size: 18px;
+    text-align: center;
+    border-bottom: 0;
+  }
+  .show-dropdown-menu a {
+    width: fit-content;
+    color: #000000;
+    font-size: 18px;
+    text-align: center;
+    border-bottom: 0;
+  }
+  .show-dropdown-menu a:hover {
     cursor: pointer;
-    border-bottom: 1px solid #000000;
+    border-bottom: 1px solid var(--bg-gray);
   }
   .show-dropdown-menu .dropdown-search:hover {
     border-bottom: none;
   }
+  .dropdown-search {
+    width: 90%;
+    max-width: 260px;
+    margin: 0 auto;
+  }
   .dropdown-search > form {
-    margin-top: 2rem;
   }
   .dropdown-search > form > input {
     background-color: var(--bg-store-light);
