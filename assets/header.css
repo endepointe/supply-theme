@@ -107,6 +107,8 @@
   */
   .menu-btn {
     margin-right: 0.6rem;
+    transform: rotate(0deg);
+    transition: transform 0.2s linear;
   }
   .menu-btn,
   .menu-btn:active,
@@ -133,7 +135,6 @@
   .menu-btn div:nth-child(3) {
     width: 28px;
     transition: width 0.25s ease-in-out;
-    background: red;
   }
   .menu-btn:hover div:nth-child(2) {
     width: 40px
