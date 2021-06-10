@@ -1,9 +1,14 @@
 @media screen and (min-width: 0) {
+  .slides-container {
+    height: 300px; 
+    margin-bottom: 5rem;
+  }
   .slide-custom {
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
   }
   .slideshow-img-custom {
     flex: 1;
@@ -39,5 +44,13 @@
     height: 24px;
     z-index: 3;
     opacity: inherit;
+  }
+}
+
+@media screen and (min-width: 550px) {
+  .slide-custom {
+  }
+  .slideshow-img-custom,
+  .hover-link {
   }
 }

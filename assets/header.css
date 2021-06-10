@@ -52,17 +52,21 @@
   .header {
     width: 100%;
     z-index: 100;
+    text-align: center;
     position: relative;
     top: 0;
     left: 0;
     right: 0;
   }
   .nav-container {
+    margin: 0 auto;
     display: flex;
     flex-flow: column nowrap;
     background-color: var(--bg-store-light-0); 
     position: fixed;
     top: 0;
+    width: 100%;
+    max-width: 1200px;
     left: 0;
     right: 0;
   }
@@ -206,12 +210,16 @@
   ////////////////////*/
   #dropdown-menu {
     position: absolute;
+    left: 0;
+    right: 0;
     z-index: 9;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
     background-color: var(--bg-store-light);
-    width: 100vw;
+    /* width: 100vw; */
+    width: 100%;
+    max-width: 1200px;
     height: 100vh;
     padding-top: 68px; /* the height of the navbar */
     visibility: hidden;
@@ -225,13 +233,14 @@
   #dropdown-menu li,
   .show-dropdown-menu li {
     flex: 0 0 58px;
-    width: 100vw;
+    width: 100%;
+    max-width: 1200px;
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     border-bottom: none;
-    margin: 2rem auto;
+    margin: 0 auto;
   }
   .show-dropdown-menu li:hover {
     /* cursor: pointer; */
@@ -259,12 +268,11 @@
   .show-dropdown-menu .dropdown-search:hover {
     border-bottom: none;
   }
-  .dropdown-search {
-    width: 90%;
-    max-width: 260px;
+  #dropdown-menu li.dropdown-search {
     margin: 0 auto;
-  }
-  .dropdown-search > form {
+    margin-top: 1rem;
+    width: 90%;
+    max-width: 300px;
   }
   .dropdown-search > form > input {
     background-color: var(--bg-store-light);
@@ -300,6 +308,11 @@
 } 
 
 @media screen and (min-width: 600px) {
+  #dropdown-menu li.dropdown-search form {
+    margin: 0;
+    margin-top: 1rem;
+    max-width: 400px;
+  }
   /*/////////// 
     HEADER HERO 
   ///////////*/
