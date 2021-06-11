@@ -20,7 +20,6 @@
     align-items: center;
   }
   input[type=email].footer-input-group-field {
-    flex: 1 0 300px;
     margin-bottom: 0;
   }
 }

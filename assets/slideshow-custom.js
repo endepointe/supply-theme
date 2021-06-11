@@ -3,11 +3,6 @@ const hoverList = document.querySelectorAll('.hover-text');
 const slideHoverTextList = document.querySelectorAll('.hover-text');
 
 $(document).ready(function() {
-
-  window.onresize = function() {
-    console.log(window.innerWidth);
-  }
-
   $('.slides-custom').slick({
     dots: false,
     infinite: true,
