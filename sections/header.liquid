@@ -1,4 +1,5 @@
 <header class="header">
+
   <div class="nav-container">
     <nav id="nav" class="nav">
       <div class="shop-name">
@@ -16,7 +17,9 @@
       <div class="cart-icon-container">
         <a class="cart-icon-link" 
           href="{{ routes.cart_url }}">
-          <span class="cart-item-count">
+          <span 
+            id="cart-item-count"
+            class="cart-item-count">
             {{cart.item_count}}
           </span>
           <img 
@@ -45,9 +48,11 @@
         <li class="dropdown-search">{% include 'search-bar' %}</li>
     </ul>
   </div> <!-- end .nav-container -->
-
-  <div class="header-hero">
-  </div>
+  {% if request.page_type == 'index' %}
+    <div class="header-hero"></div>
+  {% else %}
+    {% comment %} render a smaller banner {% endcomment %}
+  {% endif %}
   <div id="header-end" class="header-end"></div>
 </header>
 

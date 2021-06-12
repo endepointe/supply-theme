@@ -18,6 +18,13 @@ var afterResize=(function(){var t={};return function(callback,ms,uniqueId){if(!u
 
   Plugin Documentation - https://shopify.github.io/Timber/#ajax-cart
 
+  Added by Ende - search for: 
+                    'ende additions', 'cart-item-count'
+                  to see the additions. 
+
+                  cart-item-count changes:
+                    updates the nav cart item count in sections/header.liquid
+
   Ajaxify the add to cart experience and flip the button for inline confirmation,
   show the cart in a modal, or a 3D drawer.
 
@@ -685,6 +692,13 @@ var ajaxifyShopify = (function(module, $) {
 
   cartUpdateCallback = function (cart) {
     // Update quantity and price
+
+    {% comment %} 
+      ende additions
+      updates the cart count within the 
+      /sections/header.liquid
+    {% endcomment %}
+    document.getElementById('cart-item-count').textContent = cart.item_count;
     updateCountPrice(cart);
 
     switch (settings.method) {
@@ -910,12 +924,20 @@ var ajaxifyShopify = (function(module, $) {
 
       qty = validateQty(qty);
 
+      console.log('validated qty: ', qty);
+
       // Add or subtract from the current quantity
       if (el.hasClass('ajaxifyCart--add')) {
         qty = qty + 1;
       } else {
         qty = qty <= 0 ? 0 : qty - 1;
       }
+
+      {% comment %} 
+        updates the cart count within the 
+        /sections/header.liquid
+      {% endcomment %}
+      document.getElementById('cart-item-count').textContent = qty;
 
       // If it has a data-line, update the cart.
       // Otherwise, just update the input's number
@@ -942,6 +964,7 @@ var ajaxifyShopify = (function(module, $) {
       // Make sure we have a valid integer
       if( (parseFloat(qty) == parseInt(qty)) && !isNaN(qty) ) {
         // We have a number!
+        console.log('test qty: ', qty)
       } else {
         // Not a number. Default to 1.
         el.val(1);
@@ -1109,13 +1132,15 @@ var ajaxifyShopify = (function(module, $) {
       });
 
       // Setup listeners to add/subtract from the input
-      $('.js--qty-adjuster').on('click', function() {
+      $('.js--qty-adjuster').on('click', async function() {
+        console.log('listen to add/remove clicks')
         var el = $(this),
             id = el.data('id'),
             qtySelector = el.siblings('.js--num'),
             qty = parseInt( qtySelector.val() );
 
         var qty = validateQty(qty);
+
         qtyMin = $body.hasClass('template-product') ? 1 : qtyMin;
 
         // Add or subtract from the current quantity
@@ -1124,6 +1149,16 @@ var ajaxifyShopify = (function(module, $) {
         } else {
           qty = qty <= qtyMin ? qtyMin : qty - 1;
         }
+
+        {% comment %} 
+          ende additions
+        {% endcomment %}
+        var val = fetch('/cart.js').then(res => res.json())
+                                   .then(data => {return data;})
+        var result = await val;
+        console.log(result);
+        document.getElementById('cart-item-count').textContent = qty;
+
 
         // Update the input's number
         qtySelector.val(qty);

@@ -17,6 +17,9 @@ li {list-style-type: none;}
   --bg-store-light: rgba(250,250,250,1);
   --bg-store-light-0: rgba(250,250,250,0);
 }
+html, body {
+  background-color: var(--bg-store-light);
+}
 
 @media screen and (min-width: 0px) {
 }
