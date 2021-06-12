@@ -17,10 +17,7 @@
         <a class="cart-icon-link" 
           href="{{ routes.cart_url }}">
           <span class="cart-item-count">
-            {% comment %} 
-              show cart item count
-            {% endcomment %}  
-            2
+            {{cart.item_count}}
           </span>
           <img 
             class="cart-icon"

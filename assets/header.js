@@ -36,3 +36,16 @@ document.addEventListener('scroll', function(e) {
   changeNavBGColor(parseInt(navEndRect.y), parseInt(headerEndRect.y));
 });
 /* end nav opacity change after scroll */
+
+const a = document.getElementById('addToCart-product-template');
+console.log(a);
+a.addEventListener('click', async function() {
+  var test = fetch('/cart.js', 
+  {
+    method: "GET"
+  })
+  .then(res => res.json())
+  .then(data => {return data});
+  var result = await test;
+  console.log(result, result.item_count);
+});
