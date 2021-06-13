@@ -18,9 +18,10 @@
         <a class="cart-icon-link" 
           href="{{ routes.cart_url }}">
           <span 
-            id="cart-item-count"
             class="cart-item-count">
-            <div id="cart-item-count-div">{{cart.item_count}}</div>
+            <div 
+              id="cart-item-count"
+              data-value="">{{cart.item_count}}</div>
           </span>
           <img 
             class="cart-icon"

@@ -50,5 +50,4 @@ hoverList.forEach((link, i) => {
   if ((i+1) % 3 === 0) {
     link.textContent = 'Shop all';
   }
-  console.log(link);
 });

@@ -220,8 +220,13 @@ Shopify.getCart = function(callback) {
       ende additions
       desc: updates the item count in /sections/header.liquid
     {% endcomment %}
-    document.getElementById('cart-item-count-div').textContent = cart.item_count;
-    {% comment %}  {% endcomment %}
+    let cartCount = document.getElementById('cart-item-count');
+    cartCount.attributes['data-value'].value = cart.item_count;
+    cartCount.textContent = cart.item_count;
+    {% comment %} 
+    console.log(cartCount.attributes['data-value']) 
+    {% endcomment %}
+    {% comment %} end ende changes {% endcomment %}
   });
 };
 
@@ -1131,7 +1136,7 @@ var ajaxifyShopify = (function(module, $) {
 
       // Setup listeners to add/subtract from the input
       $('.js--qty-adjuster').on('click', async function() {
-        {% comment %} console.log('listen to add/remove clicks') {% endcomment %}
+
         var el = $(this),
             id = el.data('id'),
             qtySelector = el.siblings('.js--num'),
@@ -1147,16 +1152,6 @@ var ajaxifyShopify = (function(module, $) {
         } else {
           qty = qty <= qtyMin ? qtyMin : qty - 1;
         }
-
-        {% comment %} 
-          ende additions
-        {% endcomment %}
-        {% comment %} var val = fetch('/cart.js').then(res => res.json())
-                                   .then(data => {return data;})
-        var result = await val;
-        console.log(result);
-        document.getElementById('cart-item-count').textContent = qty; {% endcomment %}
-
 
         // Update the input's number
         qtySelector.val(qty);
