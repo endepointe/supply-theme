@@ -19,11 +19,12 @@ var afterResize=(function(){var t={};return function(callback,ms,uniqueId){if(!u
   Plugin Documentation - https://shopify.github.io/Timber/#ajax-cart
 
   Added by Ende - search for: 
-                    'ende additions', 'cart-item-count'
+                    'ende additions'
                   to see the additions. 
 
-                  cart-item-count changes:
-                    updates the nav cart item count in sections/header.liquid
+                  changes:
+                    - updates the nav cart item count in 
+                      sections/header.liquid
 
   Ajaxify the add to cart experience and flip the button for inline confirmation,
   show the cart in a modal, or a 3D drawer.
@@ -181,6 +182,7 @@ Shopify.addItem = function(variant_id, quantity, callback) {
     - Allow custom error callback
 ==============================================================================*/
 Shopify.addItemFromForm = function(form, callback, errorCallback) {
+  console.log('addItemFromForm')
   var params = {
     type: 'POST',
     url: '/cart/add.js',
@@ -203,6 +205,7 @@ Shopify.addItemFromForm = function(form, callback, errorCallback) {
       }
     }
   };
+  console.log(params);
   jQuery.ajax(params);
 };
 
@@ -215,6 +218,13 @@ Shopify.getCart = function(callback) {
     else {
       Shopify.onCartUpdate(cart);
     }
+    console.log(cart);
+    {% comment %} 
+      ende additions
+      desc: updates the item count in /sections/header.liquid
+    {% endcomment %}
+    document.getElementById('cart-item-count').textContent = cart.item_count;
+    {% comment %}  {% endcomment %}
   });
 };
 
@@ -698,7 +708,7 @@ var ajaxifyShopify = (function(module, $) {
       updates the cart count within the 
       /sections/header.liquid
     {% endcomment %}
-    document.getElementById('cart-item-count').textContent = cart.item_count;
+    {% comment %} document.getElementById('cart-item-count').textContent = cart.item_count; {% endcomment %}
     updateCountPrice(cart);
 
     switch (settings.method) {
@@ -1133,7 +1143,7 @@ var ajaxifyShopify = (function(module, $) {
 
       // Setup listeners to add/subtract from the input
       $('.js--qty-adjuster').on('click', async function() {
-        console.log('listen to add/remove clicks')
+        {% comment %} console.log('listen to add/remove clicks') {% endcomment %}
         var el = $(this),
             id = el.data('id'),
             qtySelector = el.siblings('.js--num'),
@@ -1153,11 +1163,11 @@ var ajaxifyShopify = (function(module, $) {
         {% comment %} 
           ende additions
         {% endcomment %}
-        var val = fetch('/cart.js').then(res => res.json())
+        {% comment %} var val = fetch('/cart.js').then(res => res.json())
                                    .then(data => {return data;})
         var result = await val;
         console.log(result);
-        document.getElementById('cart-item-count').textContent = qty;
+        document.getElementById('cart-item-count').textContent = qty; {% endcomment %}
 
 
         // Update the input's number
