@@ -182,7 +182,6 @@ Shopify.addItem = function(variant_id, quantity, callback) {
     - Allow custom error callback
 ==============================================================================*/
 Shopify.addItemFromForm = function(form, callback, errorCallback) {
-  console.log('addItemFromForm')
   var params = {
     type: 'POST',
     url: '/cart/add.js',
@@ -205,7 +204,6 @@ Shopify.addItemFromForm = function(form, callback, errorCallback) {
       }
     }
   };
-  console.log(params);
   jQuery.ajax(params);
 };
 
@@ -218,12 +216,11 @@ Shopify.getCart = function(callback) {
     else {
       Shopify.onCartUpdate(cart);
     }
-    console.log(cart);
     {% comment %} 
       ende additions
       desc: updates the item count in /sections/header.liquid
     {% endcomment %}
-    document.getElementById('cart-item-count').textContent = cart.item_count;
+    document.getElementById('cart-item-count-div').textContent = cart.item_count;
     {% comment %}  {% endcomment %}
   });
 };
@@ -934,20 +931,12 @@ var ajaxifyShopify = (function(module, $) {
 
       qty = validateQty(qty);
 
-      console.log('validated qty: ', qty);
-
       // Add or subtract from the current quantity
       if (el.hasClass('ajaxifyCart--add')) {
         qty = qty + 1;
       } else {
         qty = qty <= 0 ? 0 : qty - 1;
       }
-
-      {% comment %} 
-        updates the cart count within the 
-        /sections/header.liquid
-      {% endcomment %}
-      document.getElementById('cart-item-count').textContent = qty;
 
       // If it has a data-line, update the cart.
       // Otherwise, just update the input's number
@@ -974,7 +963,6 @@ var ajaxifyShopify = (function(module, $) {
       // Make sure we have a valid integer
       if( (parseFloat(qty) == parseInt(qty)) && !isNaN(qty) ) {
         // We have a number!
-        console.log('test qty: ', qty)
       } else {
         // Not a number. Default to 1.
         el.val(1);
