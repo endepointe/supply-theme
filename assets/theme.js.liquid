@@ -223,11 +223,6 @@ Shopify.getCart = function(callback) {
     let cartCount = document.getElementById('cart-item-count');
     cartCount.attributes['data-value'].value = cart.item_count;
     cartCount.textContent = cart.item_count;
-    if (parseInt(cartCount.textContent) > 0) {
-      cartCount.classList.remove('hidden');
-    } else {
-      cartCount.classList.add('hidden');
-    }
     {% comment %} 
     console.log(cartCount.attributes['data-value']) 
     {% endcomment %}
