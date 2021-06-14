@@ -19,6 +19,9 @@
 .overflow-hidden {
   overflow: hidden;
 }
+.hidden {
+  display: none;
+}
 @media screen and (min-width: 0px) {
   /* 
     ICONS 
@@ -40,21 +43,18 @@
     cursor: pointer;
   }
   .cart-item-count {
-    /* background-color: rgb(52,103,235); */
-    /* display: flex; */
-    /* flex-flow: row; */
-    /* justify-content: center; */
-    /* align-items: center; */
-    /* text-align: center; */
   }
   .cart-item-count div {
     position: relative;
-    top: -13px;
+    top: -14px;
     left: 7px;
     z-index: -1;
     background-color: rgb(52,103,235);
     width: 18px;
     height: 18px;
+    line-height: 18px;
+    text-align: center;
+    vertical-align: middle;
     border-radius: 9px;
     font-size: 10px;
     font-weight: 300;

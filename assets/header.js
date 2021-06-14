@@ -58,6 +58,11 @@ const fetchValue = async () => {
   }
 }
 const verifyCartCount = async function(ml, ob) {
+  // if (parseInt(cartCount.textContent) > 0) {
+  //   cartCount.classList.remove('hidden');
+  // } else {
+  //   cartCount.classList.add('hidden');
+  // }
   // test the values of each cart item
   for (const m of ml) {
     // if true, non-numerical values have been found
